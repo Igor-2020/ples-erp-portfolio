@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10251d">
+  <meta name="description" content="Ples ERP — практическая система управления небольшим магазином: веб-интерфейс, Java backend и Android-приложения.">
+  <title>Ples ERP — портфолио проекта</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0b1511;--panel:#12231b;--panel2:#172d23;--line:#294437;--text:#f1f7f2;--muted:#b2c6b8;--green:#a9efbd;--green2:#54c77b;--ink:#10251b;--amber:#f4d58b}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 78% 0%,#234833 0,transparent 38%),var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:var(--green)}a:hover{color:#d2ffe0} .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 0;border-bottom:1px solid #ffffff17}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.04em}.mark{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:var(--green);color:var(--ink);font-weight:900;font-size:20px;box-shadow:0 8px 28px #54c77b2b}.nav small{color:var(--muted)}
+    .hero{padding:86px 0 68px;display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center}.eyebrow{color:var(--green);text-transform:uppercase;font-size:12px;font-weight:800;letter-spacing:.16em}.hero h1{font-size:clamp(42px,6vw,76px);line-height:1.03;letter-spacing:-.055em;margin:18px 0 22px}.hero h1 span{color:var(--green)}.lead{font-size:19px;color:var(--muted);max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:750;border:1px solid var(--line);color:var(--text);background:#ffffff06}.btn.primary{background:var(--green);color:var(--ink);border-color:var(--green)}.note{font-size:13px;color:var(--muted);margin-top:18px}
+    .mock{border:1px solid #ffffff1b;background:linear-gradient(145deg,#1b3628,#101e17);padding:20px;border-radius:24px;box-shadow:0 32px 90px #0007;transform:rotate(1deg)}.mock-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;color:var(--muted);font-size:12px}.lights{display:flex;gap:5px}.lights i{width:7px;height:7px;border-radius:50%;background:#648c70}.mock h3{margin:0 0 5px;font-size:18px}.mock p{margin:0;color:var(--muted);font-size:12px}.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:20px 0}.metric{padding:14px;border:1px solid #ffffff12;border-radius:14px;background:#09150f66}.metric span{font-size:11px;color:var(--muted)}.metric strong{display:block;font-size:22px;margin-top:4px}.bars{height:90px;display:flex;align-items:end;gap:8px;padding:10px 4px 0;border-bottom:1px solid #ffffff19}.bars i{display:block;flex:1;border-radius:6px 6px 0 0;background:linear-gradient(var(--green),#3b9960);opacity:.9}.mock-foot{display:flex;justify-content:space-between;margin-top:12px;font-size:11px;color:var(--muted)}
+    section{padding:56px 0;border-top:1px solid #ffffff12}.section-head{max-width:680px;margin-bottom:28px}.section-head h2{font-size:clamp(28px,4vw,42px);letter-spacing:-.035em;line-height:1.15;margin:8px 0 12px}.section-head p{color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:linear-gradient(145deg,var(--panel),#0f1d16);border:1px solid var(--line);border-radius:18px;padding:22px}.icon{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:#a9efbd16;color:var(--green);font-size:21px;margin-bottom:15px}.card h3{margin:0 0 8px;font-size:19px}.card p{margin:0;color:var(--muted);font-size:14px}.tag{display:inline-block;margin-top:15px;padding:4px 8px;border:1px solid #ffffff1b;border-radius:999px;color:var(--green);font-size:11px}
+    .principle{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:start}.quote{font-size:clamp(25px,3.5vw,38px);font-weight:800;line-height:1.25;letter-spacing:-.03em;color:var(--green)}.list{display:grid;gap:12px}.item{display:flex;gap:14px;padding:15px;border-bottom:1px solid #ffffff12}.check{color:var(--green);font-weight:900}.item p{margin:0;color:var(--muted)}.item strong{color:var(--text)}
+    .status{display:grid;grid-template-columns:1fr 1fr;gap:14px}.status .card{padding:20px}.status h3{display:flex;align-items:center;gap:8px}.pill{font-size:11px;border-radius:999px;padding:3px 8px;background:#a9efbd18;color:var(--green)}.pill.warn{background:#f4d58b19;color:var(--amber)}.stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.stack span{border:1px solid var(--line);padding:5px 9px;border-radius:8px;color:var(--muted);font-size:12px}
+    .cta{padding:32px;border-radius:22px;border:1px solid #a9efbd40;background:linear-gradient(125deg,#183d29,#12251b);display:flex;align-items:center;justify-content:space-between;gap:22px}.cta h2{margin:0 0 6px;font-size:28px}.cta p{margin:0;color:var(--muted)}footer{padding:30px 0 42px;color:var(--muted);font-size:13px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;padding:58px 0 48px;gap:34px}.mock{transform:none}.grid{grid-template-columns:1fr}.principle,.status{grid-template-columns:1fr}.nav small{display:none}.cta{align-items:flex-start;flex-direction:column}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <header class="wrap nav">
+    <div class="brand"><span class="mark">P</span><span>PLES ERP<br><small>ПОРТФОЛИО ПРОЕКТА</small></span></div>
+    <small>Прикладное ПО для розничной торговли</small>
+  </header>
+  <main>
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow">Собственная разработка · Казахстан</div>
+        <h1>Управление магазином.<br><span>Без лишней магии.</span></h1>
+        <p class="lead">Ples ERP — практическая система, выросшая из реальных задач небольшого интернет-магазина. Веб-интерфейс, серверная бизнес-логика и отдельные Android-приложения работают как части одного проекта.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/Igor-2020/ples-erp-portfolio">Репозиторий портфолио ↗</a>
+          <a class="btn" href="docs/ARCHITECTURE.md">Изучить архитектуру</a>
+        </div>
+        <p class="note">Это презентация проекта, а не публичная раздача исходного кода основной системы.</p>
+      </div>
+      <div class="mock" aria-label="Иллюстративная схема интерфейса, не реальный скриншот программы">
+        <div class="mock-top"><div class="lights"><i></i><i></i><i></i></div><span>PLE S / OVERVIEW</span><span>● Demo concept</span></div>
+        <h3>Операционная сводка</h3><p>Иллюстрация концепции панели управления — не реальные данные и не скриншот приложения.</p>
+        <div class="metrics">
+          <div class="metric"><span>ТОВАРНЫЙ УЧЁТ</span><strong>Каталог</strong></div>
+          <div class="metric"><span>ОПЕРАЦИИ</span><strong>Продажи</strong></div>
+          <div class="metric"><span>КОНТРОЛЬ</span><strong>Возвраты</strong></div>
+          <div class="metric"><span>АНАЛИТИКА</span><strong>Статистика</strong></div>
+        </div>
+        <div class="bars" aria-hidden="true"><i style="height:34%"></i><i style="height:52%"></i><i style="height:43%"></i><i style="height:68%"></i><i style="height:56%"></i><i style="height:84%"></i><i style="height:72%"></i><i style="height:94%"></i></div>
+        <div class="mock-foot"><span>Схематичная иллюстрация</span><span>Web · API · Android</span></div>
+      </div>
+    </div>
+    <section>
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Единая система</div><h2>Три рабочих слоя. Одна предметная область.</h2><p>Компоненты разделены по ответственности, чтобы веб-интерфейс и мобильные приложения могли использовать общую серверную логику.</p></div>
+        <div class="grid">
+          <article class="card"><div class="icon">⌘</div><h3>Web Frontend</h3><p>Страницы веб-системы для работы с каталогом, поступлениями и другими операциями магазина.</p><span class="tag">HTML · CSS · JavaScript</span></article>
+          <article class="card"><div class="icon">⇄</div><h3>Backend API</h3><p>Серверная бизнес-логика, авторизация, контроль доступа и работа с данными SQLite.</p><span class="tag">Java 21 · Spring Boot</span></article>
+          <article class="card"><div class="icon">▣</div><h3>Android</h3><p>Отдельные приложения кассира и администратора. Кассовый клиент спроектирован для работы offline-first.</p><span class="tag">Kotlin · Room · WorkManager</span></article>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap principle">
+        <div><div class="eyebrow">Ключевой принцип</div><div class="quote">«Сначала надёжная операция. Потом синхронизация».</div></div>
+        <div class="list">
+          <div class="item"><span class="check">✓</span><p><strong>Локальная касса.</strong><br>Продажа и возврат могут быть сохранены на устройстве без немедленного доступа к серверу.</p></div>
+          <div class="item"><span class="check">✓</span><p><strong>Очередь операций.</strong><br>Outbox и фоновая задача управляют отправкой, повторами и состояниями обработки.</p></div>
+          <div class="item"><span class="check">✓</span><p><strong>Подтверждение сервера.</strong><br>Приложение учитывает ACK и не приравнивает наличие интернета к завершённой синхронизации.</p></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Возможности и честный статус</div><h2>Создаётся для реальной работы</h2><p>Основные сценарии реализованы по контрольной документации проекта. Отдельные функции и эксплуатационные этапы ещё требуют завершения и проверки.</p></div>
+        <div class="status">
+          <article class="card"><h3>Учёт и операции <span class="pill">Реализовано</span></h3><p>Номенклатура, поступления, продажи, возвраты, история операций и статистика присутствуют в проекте. Перед внешним внедрением нужна проверка на конкретной конфигурации.</p></article>
+          <article class="card"><h3>Offline-first касса <span class="pill">Реализовано</span></h3><p>Локальные операции, Outbox, фоновая синхронизация и ACK зафиксированы в контрольной точке Android Cashier.</p></article>
+          <article class="card"><h3>Администратор Android <span class="pill">В развитии</span></h3><p>Основные экраны поступлений, номенклатуры, продаж, возвратов, статистики и просмотра сотрудников описаны как реализованные.</p></article>
+          <article class="card"><h3>Печать и эксплуатация <span class="pill warn">В работе</span></h3><p>Физическая печать этикеток ещё не реализована полностью. Резервное копирование, публичный demo-стенд и финальная стабилизация требуют отдельной работы.</p></article>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap">
+        <div class="cta">
+          <div><h2>Посмотреть проект глубже?</h2><p>Откройте техническое описание, список функций и ссылки на компоненты Ples ERP.</p></div>
+          <div class="actions" style="margin:0"><a class="btn primary" href="README.md">Документация проекта</a><a class="btn" href="docs/FEATURES.md">Статус функций</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap">
+    <div class="foot"><span>© Ples ERP · Инициатор проекта: Igor-2020</span><span>Создано для собственных задач магазина при помощи ИИ-инструментов.</span></div>
+    <p>Публичная витрина не предоставляет исходный код основной системы. Иллюстрация панели выше является концептуальной, не скриншотом работающего приложения.</p>
+  </footer>
+</body>
+</html>
